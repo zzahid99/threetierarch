@@ -3,11 +3,12 @@ FROM node:latest
 WORKDIR /usr/src/app
 # Install app dependencies
 #COPY package*.json ./
+COPY . .
 
 RUN npm install
 # Copy app source code
-COPY . .
 
+RUN ls
 #Expose port and start application
 EXPOSE 8080
 CMD [ "npm", "start" ]
